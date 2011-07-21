@@ -1408,3 +1408,903 @@ Rendering template within layouts/application
 Rendering smerf_forms/edit
 Rendered smerf_forms/_smerf_form (46.9ms)
 Completed in 422ms (View: 78, DB: 31) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:12:17) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:12:18) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 17:12:19) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 125ms (View: 78, DB: 0) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 17:12:20) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 78ms (View: 31, DB: 31) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 17:12:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 47ms (View: 0, DB: 16) | 200 OK [http://localhost/users/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 17:12:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 188ms (View: 0, DB: 16) | 200 OK [http://localhost/users/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 17:12:24) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mSmerfForm Load (15.6ms)[0m   [0;1mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` = BINARY 'testsmerf' AND `smerf_forms`.id <> 1) LIMIT 1[0m
+  [4;35;1mSmerfForm Update (0.0ms)[0m   [0mUPDATE `smerf_forms` SET `cache` = NULL WHERE `id` = 1[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mCOMMIT[0m
+
+ArgumentError (syntax error on line 202, col 4: `    employment_details:'):
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/yaml.rb:133:in `load'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/yaml.rb:133:in `load'
+  vendor/plugins/smerf/app/models/smerf_file.rb:52:in `process'
+  vendor/plugins/smerf/app/models/smerf_form.rb:69:in `rebuild_cache'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:120:in `retrieve_smerf_form'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:37:in `show'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (93.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 17:17:32) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` = BINARY 'testsmerf' AND `smerf_forms`.id <> 1) LIMIT 1[0m
+  [4;36;1mSmerfForm Update (15.6ms)[0m   [0;1mUPDATE `smerf_forms` SET `cache` = NULL WHERE `id` = 1[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` = BINARY 'testsmerf' AND `smerf_forms`.id <> 1) LIMIT 1[0m
+  [4;36;1mSmerfForm Update (0.0ms)[0m   [0;1mUPDATE `smerf_forms` SET `cache` = '--- \n:smerfform: &id001 !ruby/object:SmerfMetaForm \n child_items: \n - &id045 !ruby/object:SmerfGroup \n child_items: \n - &id022 !ruby/object:SmerfQuestion \n answers: &id010 \n 1_20: \n code: 1\n default: N\n sort_order: 1\n answer: 1-20\n \">40\": \n code: 3\n default: N\n sort_order: 3\n subquestions: &id004 \n \">40\": \n help: \"Select the <b>one</b> that apply \"\n code: g1q1a3s1\n validation: validate_sub_question\n sort_order: 1\n type: singlechoice\n question: Are you aged over 40\n answers: &id002 \n 41_50: \n code: 1\n default: N\n sort_order: 1\n answer: 41-50\n \">61\": \n code: 3\n default: N\n sort_order: 3\n subquestions: &id003 \n \">61\": \n code: g1q1a3s1a3s1\n validation: validate_sub_question\n header: \n sort_order: 1\n type: textfield\n textfield_size: 10\n question: If you are older than 61, please specify\n answer: \"> 61\"\n 51_60: \n code: 2\n default: N\n sort_order: 2\n answer: 51_60\n answer: \"> 40\"\n 21_40: \n code: 2\n default: N\n sort_order: 2\n answer: 21_40\n child_items: \n - &id043 !ruby/object:SmerfAnswer \n answer: 1-20\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~1\n parent_id: ~~testsmerf~~1~~g1q1\n sort_order: 1\n subquestions: \n - &id046 !ruby/object:SmerfAnswer \n answer: 21_40\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~2\n parent_id: ~~testsmerf~~1~~g1q1\n sort_order: 2\n subquestions: \n - &id048 !ruby/object:SmerfAnswer \n answer: \"> 40\"\n child_items: \n - &id017 !ruby/object:SmerfQuestion \n answers: *id002\n child_items: \n - &id049 !ruby/object:SmerfAnswer \n answer: 41-50\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~1\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n sort_order: 1\n subquestions: \n - &id050 !ruby/object:SmerfAnswer \n answer: 51_60\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~2\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n sort_order: 2\n subquestions: \n - &id015 !ruby/object:SmerfAnswer \n answer: \"> 61\"\n child_items: \n - &id051 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g1q1a3s1a3s1\n form_object: *id001\n header: \n help: \n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3~~g1q1a3s1a3s1\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3\n question: If you are older than 61, please specify\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: 10\n type: textfield\n validation: validate_sub_question\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n sort_order: 3\n subquestions: *id003\n code: g1q1a3s1\n form_object: *id001\n header: \n help: \"Select the <b>one</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n parent_id: ~~testsmerf~~1~~g1q1~~3\n question: Are you aged over 40\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: \n type: singlechoice\n validation: validate_sub_question\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3\n parent_id: ~~testsmerf~~1~~g1q1\n sort_order: 3\n subquestions: *id004\n code: g1q1\n form_object: *id001\n header: \n help: \"Select the <b>one</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q1\n parent_id: ~~testsmerf~~1\n question: \"Specify your ages \"\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: \n type: singlechoice\n validation: validate_mandatory_question\n - &id033 !ruby/object:SmerfQuestion \n answers: &id006 \n false: \n code: 1\n default: Y\n sort_order: 1\n answer: \"No\"\n true: \n code: 2\n default: N\n sort_order: 2\n answer: \"Yes\"\n child_items: \n - &id020 !ruby/object:SmerfAnswer \n answer: \"No\"\n child_items: []\n\n code: \"1\"\n default: Y\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q2~~1\n parent_id: ~~testsmerf~~1~~g1q2\n sort_order: 1\n subquestions: \n - &id027 !ruby/object:SmerfAnswer \n answer: \"Yes\"\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q2~~2\n parent_id: ~~testsmerf~~1~~g1q2\n sort_order: 2\n subquestions: \n code: g1q2\n form_object: *id001\n header: \n help: \n item_id: ~~testsmerf~~1~~g1q2\n parent_id: ~~testsmerf~~1\n question: \"Are you married \"\n selectionbox_multiplechoice: \n sort_order: 2\n textbox_size: \n textfield_size: \n type: singlechoice\n validation: \n - &id036 !ruby/object:SmerfQuestion \n answers: &id009 \n sleeping: \n code: 3\n default: N\n sort_order: 3\n answer: Sleeping\n chess: \n code: 1\n default: N\n sort_order: 1\n answer: Chess\n other: \n code: 4\n default: N\n sort_order: 4\n subquestions: &id005 \n other_industries: \n help: \"Please specify \"\n textbox_size: 30x3\n code: g1q3a4s1\n validation: validate_sub_question\n sort_order: 1\n type: textbox\n question: \n answer: \"Other \"\n woodwork: \n code: 2\n default: N\n sort_order: 2\n answer: Wood work\n child_items: \n - &id024 !ruby/object:SmerfAnswer \n answer: Chess\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~1\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 1\n subquestions: \n - &id030 !ruby/object:SmerfAnswer \n answer: Wood work\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~2\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 2\n subquestions: \n - &id037 !ruby/object:SmerfAnswer \n answer: Sleeping\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~3\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 3\n subquestions: \n - &id040 !ruby/object:SmerfAnswer \n answer: \"Other \"\n child_items: \n - &id023 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g1q3a4s1\n form_object: *id001\n header: \n help: \"Please specify \"\n item_id: ~~testsmerf~~1~~g1q3~~4~~g1q3a4s1\n parent_id: ~~testsmerf~~1~~g1q3~~4\n question: \n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: 30x3\n textfield_size: \n type: textbox\n validation: validate_sub_question\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~4\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 4\n subquestions: *id005\n code: g1q3\n form_object: *id001\n header: Another header that you can group questions under\n help: \"Mark <b>all</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q3\n parent_id: ~~testsmerf~~1\n question: \"What are your hobbies \"\n selectionbox_multiplechoice: \n sort_order: 3\n textbox_size: \n textfield_size: \n type: multiplechoice\n validation: \n - &id044 !ruby/object:SmerfQuestion \n answers: &id007 \n fr: \n code: 3\n default: N\n sort_order: 3\n answer: France\n sa: \n code: 4\n default: N\n sort_order: 4\n answer: \"South Africa \"\n us: \n code: 2\n default: Y\n sort_order: 2\n answer: \"United States \"\n au: \n code: 1\n default: N\n sort_order: 1\n answer: Australia\n child_items: \n - &id016 !ruby/object:SmerfAnswer \n answer: Australia\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~1\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 1\n subquestions: \n - &id019 !ruby/object:SmerfAnswer \n answer: \"United States \"\n child_items: []\n\n code: \"2\"\n default: Y\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~2\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 2\n subquestions: \n - &id026 !ruby/object:SmerfAnswer \n answer: France\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~3\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 3\n subquestions: \n - &id032 !ruby/object:SmerfAnswer \n answer: \"South Africa \"\n child_items: []\n\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~4\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 4\n subquestions: \n code: g1q5\n form_object: *id001\n header: \n help: \"Choose <b>all</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q5\n parent_id: ~~testsmerf~~1\n question: \"Which countries have you visited \"\n selectionbox_multiplechoice: Y\n sort_order: 4\n textbox_size: \n textfield_size: \n type: selectionbox\n validation: \n - &id041 !ruby/object:SmerfQuestion \n answers: &id008 \n blue: \n code: 2\n default: Y\n sort_order: 2\n answer: \"Blue \"\n green: \n code: 3\n default: N\n sort_order: 3\n answer: \"Green \"\n red: \n code: 1\n default: N\n sort_order: 1\n answer: Red\n yellow: \n code: 4\n default: N\n sort_order: 4\n answer: \"Yellow \"\n child_items: \n - &id018 !ruby/object:SmerfAnswer \n answer: Red\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~1\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 1\n subquestions: \n - &id025 !ruby/object:SmerfAnswer \n answer: \"Blue \"\n child_items: []\n\n code: \"2\"\n default: Y\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~2\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 2\n subquestions: \n - &id031 !ruby/object:SmerfAnswer \n answer: \"Green \"\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~3\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 3\n subquestions: \n - &id038 !ruby/object:SmerfAnswer \n answer: \"Yellow \"\n child_items: []\n\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~4\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 4\n subquestions: \n code: g1q4\n form_object: *id001\n header: \n help: \"Choose <b>one</b> of the following \"\n item_id: ~~testsmerf~~1~~g1q4\n parent_id: ~~testsmerf~~1\n question: \"What is your favourite colour \"\n selectionbox_multiplechoice: \n sort_order: 4\n textbox_size: \n textfield_size: \n type: selectionbox\n validation: validate_mandatory_question\n code: \"1\"\n description: |\n This is a brief description of the Personal Details Grouphere we ask you some personal details ...\n\n form_object: *id001\n item_id: ~~testsmerf~~1\n name: Personal Details Group\n parent_id: ~~testsmerf\n questions: &id013 \n are_you_married: \n help: \n code: g1q2\n sort_order: 2\n type: singlechoice\n question: \"Are you married \"\n answers: *id006\n os_travel: \n help: \"Choose <b>all</b> that apply \"\n code: g1q5\n sort_order: 4\n type: selectionbox\n question: \"Which countries have you visited \"\n answers: *id007\n selectionbox_multiplechoice: Y\n favourite_color: \n help: \"Choose <b>one</b> of the following \"\n code: g1q4\n validation: validate_mandatory_question\n sort_order: 4\n type: selectionbox\n question: \"What is your favourite colour \"\n answers: *id008\n hobbies: \n help: \"Mark <b>all</b> that apply \"\n code: g1q3\n header: Another header that you can group questions under\n sort_order: 3\n type: multiplechoice\n question: \"What are your hobbies \"\n answers: *id009\n specify_your_age: \n help: \"Select the <b>one</b> that apply \"\n code: g1q1\n validation: validate_mandatory_question\n sort_order: 1\n type: singlechoice\n question: \"Specify your ages \"\n answers: *id010\n - &id047 !ruby/object:SmerfGroup \n child_items: \n - &id034 !ruby/object:SmerfQuestion \n answers: &id012 \n it: \n code: 1\n default: N\n sort_order: 1\n answer: Information Technology\n accounting: \n code: 2\n default: N\n sort_order: 2\n answer: \"Accounting \"\n finance: \n code: 3\n default: N\n sort_order: 3\n answer: \"Finance \"\n other: \n code: 4\n default: N\n sort_order: 4\n subquestions: &id011 \n other_industries: \n help: \"Please specify \"\n textbox_size: 30x3\n code: g2q1a4s1\n validation: validate_sub_question\n sort_order: 1\n type: textbox\n question: \n answer: \"Other \"\n child_items: \n - &id021 !ruby/object:SmerfAnswer \n answer: Information Technology\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~1\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 1\n subquestions: \n - &id029 !ruby/object:SmerfAnswer \n answer: \"Accounting \"\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~2\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 2\n subquestions: \n - &id035 !ruby/object:SmerfAnswer \n answer: \"Finance \"\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~3\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 3\n subquestions: \n - &id039 !ruby/object:SmerfAnswer \n answer: \"Other \"\n child_items: \n - &id028 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g2q1a4s1\n form_object: *id001\n header: \n help: \"Please specify \"\n item_id: ~~testsmerf~~2~~g2q1~~4~~g2q1a4s1\n parent_id: ~~testsmerf~~2~~g2q1~~4\n question: \n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: 30x3\n textfield_size: \n type: textbox\n validation: validate_sub_question\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~4\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 4\n subquestions: *id011\n code: g2q1\n form_object: *id001\n header: \n help: \"Mark <b>all</b> that apply \"\n item_id: ~~testsmerf~~2~~g2q1\n parent_id: ~~testsmerf~~2\n question: \"Which industries have you worked in \"\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: \n type: multiplechoice\n validation: validate_mandatory_question\n - &id042 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g2q3\n form_object: *id001\n header: \n help: \n item_id: ~~testsmerf~~2~~g2q3\n parent_id: ~~testsmerf~~2\n question: How many years have you worked in the industry\n selectionbox_multiplechoice: \n sort_order: 3\n textbox_size: \n textfield_size: 10\n type: textfield\n validation: validate_mandatory_question, validate_years\n code: \"2\"\n description: \"Brief description of the employment details group \"\n form_object: *id001\n item_id: ~~testsmerf~~2\n name: Employment Details Group\n parent_id: ~~testsmerf\n questions: &id014 \n how_many_years: \n help: \n code: g2q3\n validation: validate_mandatory_question, validate_years\n header: \n sort_order: 3\n type: textfield\n textfield_size: 10\n question: How many years have you worked in the industry\n which_industry: \n help: \"Mark <b>all</b> that apply \"\n code: g2q1\n validation: validate_mandatory_question\n sort_order: 1\n type: multiplechoice\n question: \"Which industries have you worked in \"\n answers: *id012\n code: testsmerf\n errors: {}\n\n form_object: *id001\n group_sort_order_field: code\n groups: \n personal_details: \n name: Personal Details Group\n questions: *id013\n code: 1\n description: |\n This is a brief description of the Personal Details Grouphere we ask you some personal details ...\n\n employment_details: \n name: Employment Details Group\n questions: *id014\n code: 2\n question_sort_order_field: sort_order\n description: \"Brief description of the employment details group \"\n item_id: ~~testsmerf\n item_index: \n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3: *id015\n ~~testsmerf~~1~~g1q5~~1: *id016\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1: *id017\n ~~testsmerf~~1~~g1q4~~1: *id018\n ~~testsmerf~~1~~g1q5~~2: *id019\n ~~testsmerf~~1~~g1q2~~1: *id020\n ~~testsmerf~~2~~g2q1~~1: *id021\n ~~testsmerf~~1~~g1q1: *id022\n ~~testsmerf~~1~~g1q3~~4~~g1q3a4s1: *id023\n ~~testsmerf~~1~~g1q3~~1: *id024\n ~~testsmerf~~1~~g1q4~~2: *id025\n ~~testsmerf~~1~~g1q5~~3: *id026\n ~~testsmerf~~1~~g1q2~~2: *id027\n ~~testsmerf: *id001\n ~~testsmerf~~2~~g2q1~~4~~g2q1a4s1: *id028\n ~~testsmerf~~2~~g2q1~~2: *id029\n ~~testsmerf~~1~~g1q3~~2: *id030\n ~~testsmerf~~1~~g1q4~~3: *id031\n ~~testsmerf~~1~~g1q5~~4: *id032\n ~~testsmerf~~1~~g1q2: *id033\n ~~testsmerf~~2~~g2q1: *id034\n ~~testsmerf~~2~~g2q1~~3: *id035\n ~~testsmerf~~1~~g1q3: *id036\n ~~testsmerf~~1~~g1q3~~3: *id037\n ~~testsmerf~~1~~g1q4~~4: *id038\n ~~testsmerf~~2~~g2q1~~4: *id039\n ~~testsmerf~~1~~g1q3~~4: *id040\n ~~testsmerf~~1~~g1q4: *id041\n ~~testsmerf~~2~~g2q3: *id042\n ~~testsmerf~~1~~g1q1~~1: *id043\n ~~testsmerf~~1~~g1q5: *id044\n ~~testsmerf~~1: *id045\n ~~testsmerf~~1~~g1q1~~2: *id046\n ~~testsmerf~~2: *id047\n ~~testsmerf~~1~~g1q1~~3: *id048\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~1: *id049\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~2: *id050\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3~~g1q1a3s1a3s1: *id051\n name: Test SMERF Form\n parent_id: \"\"\n thank_you: |\n <b>Thank you for your input.</b><br><br>\n \n Should you wish to discuss this survey please contact<br>\n Joe Bloggs<br>\n Tel. 12 345 678<br>\n e-mail <A HREF=\\\"mailto:jbloggs@xyz.com.au\\\">Joe\'s email</A><br><br>\n \n February 2007\n\n welcome: |\n <b>Welcome:</b><br>\n Thank you for taking part in our Test survey we appreciate your\n input.<br><br>\n \n <b>PRIVACY STATEMENT</b><br>\n We will keep all the information you provide private and not share\n it with anyone else....<br>\n\n', `cache_date` = '2011-07-21 09:17:30' WHERE `id` = 1[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+  [4;36;1mSmerfFormsUser Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering smerf_forms/edit
+Rendered smerf_forms/_smerf_form (31.3ms)
+Completed in 1000ms (View: 47, DB: 31) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 17:39:55) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSmerfFormsUser Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering smerf_forms/edit
+
+ActionView::TemplateError (undefined local variable or method `root_page' for #<ActionView::Base:0x4936638>) on line #26 of vendor/plugins/smerf/app/views/smerf_forms/_smerf_form.html.erb:
+23:   <div class="submit">
+24:     <p>
+25:     <%= submit_tag 'Press to Save your answers', :disable_with => "Saving&hellip;" %>
+26:     <%= link_to 'Back to Home', root_page %>
+27:     </p>                        
+28:   </div> 
+29:   <%= hidden_field_tag("smerf_form_id", @smerfform.id) %>
+
+    vendor/plugins/smerf/app/views/smerf_forms/_smerf_form.html.erb:26
+    vendor/plugins/smerf/app/views/smerf_forms/edit.html.erb:3
+    vendor/plugins/smerf/app/views/smerf_forms/edit.html.erb:2
+    vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:42:in `show'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (218.8ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 17:40:09) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSmerfFormsUser Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering smerf_forms/edit
+
+ActionView::TemplateError (undefined local variable or method `root_page' for #<ActionView::Base:0x49382a0>) on line #26 of vendor/plugins/smerf/app/views/smerf_forms/_smerf_form.html.erb:
+23:   <div class="submit">
+24:     <p>
+25:     <%= submit_tag 'Press to Save your answers', :disable_with => "Saving&hellip;" %>
+26:     <%= link_to 'Back to Home', root_page %>
+27:     </p>                        
+28:   </div> 
+29:   <%= hidden_field_tag("smerf_form_id", @smerfform.id) %>
+
+    vendor/plugins/smerf/app/views/smerf_forms/_smerf_form.html.erb:26
+    vendor/plugins/smerf/app/views/smerf_forms/edit.html.erb:3
+    vendor/plugins/smerf/app/views/smerf_forms/edit.html.erb:2
+    vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:42:in `show'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:40:18) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:40:19) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 17:40:19) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 63ms (View: 47, DB: 0) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 17:40:20) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 109ms (View: 63, DB: 0) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 17:40:21) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 172ms (View: 16, DB: 16) | 200 OK [http://localhost/users/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 17:40:23) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 47ms (View: 0, DB: 31) | 200 OK [http://localhost/users/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 17:40:23) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSmerfFormsUser Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 3) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering smerf_forms/edit
+
+ActionView::TemplateError (undefined local variable or method `root_page' for #<ActionView::Base:0x49d6220>) on line #26 of vendor/plugins/smerf/app/views/smerf_forms/_smerf_form.html.erb:
+23:   <div class="submit">
+24:     <p>
+25:     <%= submit_tag 'Press to Save your answers', :disable_with => "Saving&hellip;" %>
+26:     <%= link_to 'Back to Home', root_page %>
+27:     </p>                        
+28:   </div> 
+29:   <%= hidden_field_tag("smerf_form_id", @smerfform.id) %>
+
+    vendor/plugins/smerf/app/views/smerf_forms/_smerf_form.html.erb:26
+    vendor/plugins/smerf/app/views/smerf_forms/edit.html.erb:3
+    vendor/plugins/smerf/app/views/smerf_forms/edit.html.erb:2
+    vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:42:in `show'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (140.6ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 17:40:42) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSmerfFormsUser Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 3) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering smerf_forms/edit
+Rendered smerf_forms/_smerf_form (31.3ms)
+Completed in 78ms (View: 63, DB: 0) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:44:12) [GET]
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (undefined local variable or method `results_path' for #<ActionView::Base:0x47e9650>) on line #4 of app/views/home/index.html.erb:
+1: <h1>Home#index</h1>
+2: <p>Find me in app/views/home/index.html.erb</p>
+3: <p><%= link_to 'View Users', users_path%> </p>
+4: <p><%= link_to 'View Answers', results_path%> </p>
+
+    app/views/home/index.html.erb:4
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (250.0ms)
+Rendered rescues/_request_and_response (15.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:44:56) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-07-21 17:44:58) [GET]
+
+NameError (uninitialized constant ResultsController):
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (62.5ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-07-21 17:46:00) [GET]
+
+ActionController::RoutingError (No route matches "/results" with {:method=>:get}):
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-07-21 17:46:31) [GET]
+
+ActionController::RoutingError (No route matches "/results" with {:method=>:get}):
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-07-21 17:46:34) [GET]
+
+ActionController::RoutingError (No route matches "/result" with {:method=>:get}):
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:48:20) [GET]
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (undefined local variable or method `results_path' for #<ActionView::Base:0x48db570>) on line #4 of app/views/home/index.html.erb:
+1: <h1>Home#index</h1>
+2: <p>Find me in app/views/home/index.html.erb</p>
+3: <p><%= link_to 'View Users', users_path%> </p>
+4: <p><%= link_to 'View Answers', results_path%> </p>
+
+    app/views/home/index.html.erb:4
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:48:21) [GET]
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (undefined local variable or method `results_path' for #<ActionView::Base:0x471a170>) on line #4 of app/views/home/index.html.erb:
+1: <h1>Home#index</h1>
+2: <p>Find me in app/views/home/index.html.erb</p>
+3: <p><%= link_to 'View Users', users_path%> </p>
+4: <p><%= link_to 'View Answers', results_path%> </p>
+
+    app/views/home/index.html.erb:4
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:48:37) [GET]
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (undefined local variable or method `result_path' for #<ActionView::Base:0x48747f0>) on line #4 of app/views/home/index.html.erb:
+1: <h1>Home#index</h1>
+2: <p>Find me in app/views/home/index.html.erb</p>
+3: <p><%= link_to 'View Users', users_path%> </p>
+4: <p><%= link_to 'View Answers', result_path%> </p>
+
+    app/views/home/index.html.erb:4
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (265.6ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:48:43) [GET]
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (undefined local variable or method `admin_path' for #<ActionView::Base:0x4a2f698>) on line #4 of app/views/home/index.html.erb:
+1: <h1>Home#index</h1>
+2: <p>Find me in app/views/home/index.html.erb</p>
+3: <p><%= link_to 'View Users', users_path%> </p>
+4: <p><%= link_to 'View Answers', admin_path%> </p>
+
+    app/views/home/index.html.erb:4
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:49:02) [GET]
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (undefined local variable or method `admin_url' for #<ActionView::Base:0x47ee828>) on line #4 of app/views/home/index.html.erb:
+1: <h1>Home#index</h1>
+2: <p>Find me in app/views/home/index.html.erb</p>
+3: <p><%= link_to 'View Users', users_path%> </p>
+4: <p><%= link_to 'View Answers', admin_url%> </p>
+
+    app/views/home/index.html.erb:4
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (250.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:49:20) [GET]
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (admin_url failed to generate from {:controller=>"admin", :action=>"show"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["admin", :id] - are they all satisfied?) on line #4 of app/views/home/index.html.erb:
+1: <h1>Home#index</h1>
+2: <p>Find me in app/views/home/index.html.erb</p>
+3: <p><%= link_to 'View Users', users_path%> </p>
+4: <p><%= link_to 'View Answers', admin_url%> </p>
+
+    (eval):17:in `admin_url'
+    app/views/home/index.html.erb:4
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:49:29) [GET]
+Rendering template within layouts/application
+Rendering home/index
+
+ActionView::TemplateError (admin_url failed to generate from {:controller=>"admin", :action=>"show"} - you may have ambiguous routes, or you may need to supply additional parameters for this route.  content_url has the following required parameters: ["admin", :id] - are they all satisfied?) on line #4 of app/views/home/index.html.erb:
+1: <h1>Home#index</h1>
+2: <p>Find me in app/views/home/index.html.erb</p>
+3: <p><%= link_to 'View Users', users_path%> </p>
+4: <p><%= link_to 'View Answers', admin_path%> </p>
+
+    (eval):17:in `admin_path'
+    app/views/home/index.html.erb:4
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:51:15) [GET]
+Rendering template within layouts/application
+Rendering home/index
+ERROR: compiling _run_erb_app47views47home47index46html46erb RAISED compile error
+C:/Sites/mysmerf/app/views/home/index.html.erb:5: syntax error, unexpected kENSURE
+C:/Sites/mysmerf/app/views/home/index.html.erb:7: syntax error, unexpected kEND, expecting ')'
+Function body:           def _run_erb_app47views47home47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "<h1>Home#index</h1>\n<p>Find me in app/views/home/index.html.erb</p>\n<p>"
+
+; @output_buffer.concat(( link_to 'View Users', users_path).to_s); @output_buffer.concat " </p>\n<p>"
+; @output_buffer.concat((# link_to 'View Answers', admin_path).to_s); @output_buffer.concat " </p>"; @output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: C:/Sites/mysmerf/app/views/home/index.html.erb:7:in `compile!'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:61:in `compile'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/renderable.rb:28:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/template.rb:205:in `render_template'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:265:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:348:in `_render_with_layout'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_view/base.rb:262:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1250:in `render_for_file'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:936:in `render_without_benchmark'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:51:in `render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1326:in `default_render'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:617:in `call_filters'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activesupport-2.3.8/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/flash.rb:151:in `perform_action'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `send'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:532:in `process_without_filters'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/filters.rb:606:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:391:in `process'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/base.rb:386:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/routing/route_set.rb:438:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:87:in `dispatch'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:121:in `_call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:29:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:9:in `cache'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/query_cache.rb:28:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/activerecord-2.3.8/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/string_coercion.rb:25:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.1.2/lib/rack/head.rb:9:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.1.2/lib/rack/methodoverride.rb:24:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/params_parser.rb:15:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/session/cookie_store.rb:99:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/failsafe.rb:26:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `synchronize'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.1.2/lib/rack/lock.rb:11:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:114:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/reloader.rb:34:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/actionpack-2.3.8/lib/action_controller/dispatcher.rb:108:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/static.rb:31:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:47:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.1.2/lib/rack/urlmap.rb:41:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/rails/rack/log_tailer.rb:17:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.1.2/lib/rack/content_length.rb:13:in `call'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.1.2/lib/rack/handler/webrick.rb:48:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rack-1.1.2/lib/rack/handler/webrick.rb:14:in `run'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/gems/1.8/gems/rails-2.3.8/lib/commands/server.rb:111
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `gem_original_require'
+C:/RailsInstaller/Ruby1.8.7/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:29:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+C:/Sites/mysmerf/app/views/home/index.html.erb:5: syntax error, unexpected kENSURE
+C:/Sites/mysmerf/app/views/home/index.html.erb:7: syntax error, unexpected kEND, expecting ')') on line #5 of app/views/home/index.html.erb:
+2: <p>Find me in app/views/home/index.html.erb</p>
+3: <p><%= link_to 'View Users', users_path%> </p>
+4: <p><%=# link_to 'View Answers', admin_path%> </p>
+
+    app/views/home/index.html.erb:7:in `compile!'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (109.4ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:51:28) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 375ms (View: 359, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 17:51:30) [GET]
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 63ms (View: 16, DB: 31) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 17:51:31) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 17:51:32) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 47ms (View: 0, DB: 31) | 200 OK [http://localhost/users/3]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 17:51:33) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSmerfFormsUser Load (31.3ms)[0m   [0;1mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 3) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering smerf_forms/edit
+Rendered smerf_forms/_smerf_form (46.9ms)
+Completed in 78ms (View: 47, DB: 31) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:51:36) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 17:51:37) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 17:51:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 63ms (View: 16, DB: 16) | 200 OK [http://localhost/users/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 17:51:41) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSmerfFormsUser Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering smerf_forms/edit
+Rendered smerf_forms/_smerf_form (31.2ms)
+Completed in 63ms (View: 63, DB: 0) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:51:43) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 17:51:44) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 250ms (View: 203, DB: 0) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#edit (for 127.0.0.1 at 2011-07-21 17:51:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/edit
+Completed in 78ms (View: 31, DB: 31) | 200 OK [http://localhost/users/1/edit]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 17:51:49) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 63ms (View: 47, DB: 0) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 17:53:32) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 63ms (View: 31, DB: 16) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 17:53:34) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20110721023446)
+Migrating to CreateSmerfs (20110721023552)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `smerf_forms`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `smerf_forms`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `smerf_forms`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `smerf_forms_users`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `smerf_forms_users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `smerf_forms_users`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `smerf_responses`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `smerf_responses`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `smerf_responses`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
