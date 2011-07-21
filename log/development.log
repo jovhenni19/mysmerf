@@ -1,0 +1,1080 @@
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2011-07-21 09:54:16) [GET]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+Completed in 109ms (View: 16, DB: 0) | 200 OK [http://localhost/rails/info/properties]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2011-07-21 09:59:39) [GET]
+
+NameError (uninitialized constant HomeController):
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (78.1ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (33.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (66.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:23:21) [GET]
+Rendering home/index
+Completed in 268ms (View: 268, DB: 100) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (125.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `schema_migrations`[0m
+  [4;35;1mSQL (204.1ms)[0m   [0mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20110721023446)
+  [4;36;1mSQL (94.2ms)[0m   [0;1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (47.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20110721023446')[0m
+Migrating to CreateSmerfs (20110721023552)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (78.5ms)[0m   [0mCREATE TABLE `smerf_forms` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255) NOT NULL, `code` varchar(255) NOT NULL, `active` int(11) NOT NULL, `cache` text, `cache_date` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (31.4ms)[0m   [0;1mSHOW KEYS FROM `smerf_forms`[0m
+  [4;35;1mSQL (109.9ms)[0m   [0mCREATE UNIQUE INDEX `index_smerf_forms_on_code` ON `smerf_forms` (`code`)[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (109.9ms)[0m   [0mCREATE TABLE `smerf_forms_users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11) NOT NULL, `smerf_form_id` int(11) NOT NULL, `responses` text NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (94.2ms)[0m   [0mCREATE TABLE `smerf_responses` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `smerf_forms_user_id` int(11) NOT NULL, `question_code` varchar(255) NOT NULL, `response` text NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (47.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110721023552')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mSHOW FIELDS FROM `smerf_forms`[0m
+  [4;35;1mSQL (15.7ms)[0m   [0mdescribe `smerf_forms`[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mSHOW KEYS FROM `smerf_forms`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `smerf_forms_users`[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mdescribe `smerf_forms_users`[0m
+  [4;35;1mSQL (15.7ms)[0m   [0mSHOW KEYS FROM `smerf_forms_users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `smerf_responses`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mdescribe `smerf_responses`[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mSHOW KEYS FROM `smerf_responses`[0m
+  [4;35;1mSQL (15.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:42:50) [GET]
+Rendering home/index
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 10:42:52) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 516ms (View: 501, DB: 0) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-07-21 10:42:55) [GET]
+  [4;35;1mUser Columns (15.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 63ms (View: 31, DB: 16) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-07-21 10:43:02) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"t163Ck7eEaOCMPZe4pMGXcgMNmI1w+EDLtHdI8jC2rQ=", "user"=>{"username"=>"nokia", "password"=>"5250"}}
+  [4;36;1mUser Columns (15.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Create (15.7ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `updated_at`, `username`, `password`) VALUES('2011-07-21 02:43:02', '2011-07-21 02:43:02', 'nokia', '5250')[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/1
+Completed in 94ms (DB: 63) | 302 Found [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 10:43:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (15.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (31.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+
+ActionView::TemplateError (undefined method `smerf_url' for #<ActionView::Base:0x4a5eac8>) on line #13 of app/views/users/show.html.erb:
+10: 
+11: 
+12: self.smerf_user_id = @user.id
+13: <%= link_to 'Take Survey', smerf_url('testsmerf') %>
+14: <%= link_to 'Edit', edit_user_path(@user) %> |
+15: <%= link_to 'Back', users_path %>
+
+    app/views/users/show.html.erb:13
+    app/controllers/users_controller.rb:18:in `show'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (125.2ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:44:46) [GET]
+Rendering home/index
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 10:44:48) [GET]
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Completed in 485ms (View: 469, DB: 0) | 200 OK [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 10:44:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mUser Columns (15.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 47ms (View: 16, DB: 31) | 200 OK [http://localhost/users/1]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 10:45:05) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfForm Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `smerf_forms`[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+
+RuntimeError (C:/Sites/mysmerf/smerf/testsmerf.yml is not a valid smerf form file):
+  vendor/plugins/smerf/app/models/smerf_file.rb:65:in `process'
+  vendor/plugins/smerf/app/models/smerf_form.rb:69:in `rebuild_cache'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:120:in `retrieve_smerf_form'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:37:in `show'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (78.2ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:45:51) [GET]
+Rendering home/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:45:52) [GET]
+Rendering home/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 10:45:53) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 94ms (View: 63, DB: 0) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 10:45:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 141ms (View: 78, DB: 0) | 200 OK [http://localhost/users/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 10:45:59) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+
+RuntimeError (C:/Sites/mysmerf/smerf/testsmerf.yml is not a valid smerf form file):
+  vendor/plugins/smerf/app/models/smerf_file.rb:65:in `process'
+  vendor/plugins/smerf/app/models/smerf_form.rb:69:in `rebuild_cache'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:120:in `retrieve_smerf_form'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:37:in `show'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (93.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:47:34) [GET]
+Rendering home/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:47:34) [GET]
+Rendering home/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 10:47:36) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 10:47:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 63ms (View: 16, DB: 16) | 200 OK [http://localhost/users/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 10:47:38) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+
+RuntimeError (C:/Sites/mysmerf/smerf/testsmerf.yml is not a valid smerf form file):
+  vendor/plugins/smerf/app/models/smerf_file.rb:65:in `process'
+  vendor/plugins/smerf/app/models/smerf_form.rb:69:in `rebuild_cache'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:120:in `retrieve_smerf_form'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:37:in `show'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (93.8ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:49:01) [GET]
+Rendering home/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:49:02) [GET]
+Rendering home/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 10:49:03) [GET]
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 63ms (View: 16, DB: 31) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 10:49:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 172ms (View: 125, DB: 31) | 200 OK [http://localhost/users/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 10:49:06) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+
+RuntimeError (C:/Sites/mysmerf/smerf/testsmerf.yml is not a valid smerf form file):
+  vendor/plugins/smerf/app/models/smerf_file.rb:65:in `process'
+  vendor/plugins/smerf/app/models/smerf_form.rb:69:in `rebuild_cache'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:120:in `retrieve_smerf_form'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:37:in `show'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (78.2ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20110721023446)
+Migrating to CreateSmerfs (20110721023552)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW FIELDS FROM `smerf_forms`[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mdescribe `smerf_forms`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `smerf_forms`[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mSHOW FIELDS FROM `smerf_forms_users`[0m
+  [4;35;1mSQL (15.7ms)[0m   [0mdescribe `smerf_forms_users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `smerf_forms_users`[0m
+  [4;35;1mSQL (15.7ms)[0m   [0mSHOW FIELDS FROM `smerf_responses`[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mdescribe `smerf_responses`[0m
+  [4;35;1mSQL (15.7ms)[0m   [0mSHOW KEYS FROM `smerf_responses`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (15.7ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:53:03) [GET]
+Rendering home/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:53:04) [GET]
+Rendering home/index
+Completed in 0ms (View: 0, DB: 16) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 10:53:05) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (15.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 31ms (View: 0, DB: 16) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 10:53:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (15.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 63ms (View: 16, DB: 16) | 200 OK [http://localhost/users/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 10:53:08) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+
+RuntimeError (C:/Sites/mysmerf/smerf/testsmerf.yml is not a valid smerf form file):
+  vendor/plugins/smerf/app/models/smerf_file.rb:65:in `process'
+  vendor/plugins/smerf/app/models/smerf_form.rb:69:in `rebuild_cache'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:120:in `retrieve_smerf_form'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:37:in `show'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (94.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfTestController#index (for 127.0.0.1 at 2011-07-21 10:53:19) [GET]
+Rendering smerf_test/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/smerf_test]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 10:53:22) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+
+RuntimeError (C:/Sites/mysmerf/smerf/testsmerf.yml is not a valid smerf form file):
+  vendor/plugins/smerf/app/models/smerf_file.rb:65:in `process'
+  vendor/plugins/smerf/app/models/smerf_form.rb:69:in `rebuild_cache'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:120:in `retrieve_smerf_form'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:37:in `show'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (78.3ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfTestController#index (for 127.0.0.1 at 2011-07-21 10:53:55) [GET]
+Rendering smerf_test/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/smerf_test]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfTestController#index (for 127.0.0.1 at 2011-07-21 10:53:56) [GET]
+Rendering smerf_test/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/smerf_test]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 10:53:58) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+
+RuntimeError (C:/Sites/mysmerf/smerf/testsmerf.yml is not a valid smerf form file):
+  vendor/plugins/smerf/app/models/smerf_file.rb:65:in `process'
+  vendor/plugins/smerf/app/models/smerf_form.rb:69:in `rebuild_cache'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:120:in `retrieve_smerf_form'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:37:in `show'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (94.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:57:12) [GET]
+Rendering home/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:57:13) [GET]
+Rendering home/index
+Completed in 31ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 10:57:14) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (15.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 63ms (View: 16, DB: 16) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 10:57:16) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/users/1]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 10:57:17) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+
+RuntimeError (C:/Sites/mysmerf/smerf/testsmerf.yml is not a valid smerf form file):
+  vendor/plugins/smerf/app/models/smerf_file.rb:65:in `process'
+  vendor/plugins/smerf/app/models/smerf_form.rb:69:in `rebuild_cache'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:120:in `retrieve_smerf_form'
+  vendor/plugins/smerf/app/controllers/smerf_forms_controller.rb:37:in `show'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  C:/RailsInstaller/Ruby1.8.7/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (94.0ms)
+Rendered rescues/_request_and_response (0.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:57:38) [GET]
+Rendering home/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 10:57:39) [GET]
+Rendering home/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 11:00:15) [GET]
+Rendering home/index
+Completed in 0ms (View: 0, DB: 16) | 200 OK [http://localhost/]
+  [4;35;1mSQL (15.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 11:00:17) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 47ms (View: 31, DB: 16) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 11:00:18) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 94ms (View: 16, DB: 16) | 200 OK [http://localhost/users/1]
+  [4;35;1mSQL (15.6ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 11:00:19) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSmerfForm Load (15.6ms)[0m   [0mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` IS NULL) LIMIT 1[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT `smerf_forms`.id FROM `smerf_forms` WHERE (`smerf_forms`.`code` = BINARY 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfForm Create (0.0ms)[0m   [0mINSERT INTO `smerf_forms` (`name`, `code`, `cache`, `cache_date`, `active`) VALUES('Test SMERF Form', 'testsmerf', '--- \n:smerfform: &id001 !ruby/object:SmerfMetaForm \n child_items: \n - &id045 !ruby/object:SmerfGroup \n child_items: \n - &id022 !ruby/object:SmerfQuestion \n answers: &id010 \n 1_20: \n code: 1\n default: N\n sort_order: 1\n answer: 1-20\n \">40\": \n code: 3\n default: N\n sort_order: 3\n subquestions: &id004 \n \">40\": \n help: \"Select the <b>one</b> that apply \"\n code: g1q1a3s1\n validation: validate_sub_question\n sort_order: 1\n type: singlechoice\n question: Are you aged over 40\n answers: &id002 \n 41_50: \n code: 1\n default: N\n sort_order: 1\n answer: 41-50\n \">61\": \n code: 3\n default: N\n sort_order: 3\n subquestions: &id003 \n \">61\": \n code: g1q1a3s1a3s1\n validation: validate_sub_question\n header: \n sort_order: 1\n type: textfield\n textfield_size: 10\n question: If you are older than 61, please specify\n answer: \"> 61\"\n 51_60: \n code: 2\n default: N\n sort_order: 2\n answer: 51_60\n answer: \"> 40\"\n 21_40: \n code: 2\n default: N\n sort_order: 2\n answer: 21_40\n child_items: \n - &id043 !ruby/object:SmerfAnswer \n answer: 1-20\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~1\n parent_id: ~~testsmerf~~1~~g1q1\n sort_order: 1\n subquestions: \n - &id046 !ruby/object:SmerfAnswer \n answer: 21_40\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~2\n parent_id: ~~testsmerf~~1~~g1q1\n sort_order: 2\n subquestions: \n - &id048 !ruby/object:SmerfAnswer \n answer: \"> 40\"\n child_items: \n - &id017 !ruby/object:SmerfQuestion \n answers: *id002\n child_items: \n - &id049 !ruby/object:SmerfAnswer \n answer: 41-50\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~1\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n sort_order: 1\n subquestions: \n - &id050 !ruby/object:SmerfAnswer \n answer: 51_60\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~2\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n sort_order: 2\n subquestions: \n - &id015 !ruby/object:SmerfAnswer \n answer: \"> 61\"\n child_items: \n - &id051 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g1q1a3s1a3s1\n form_object: *id001\n header: \n help: \n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3~~g1q1a3s1a3s1\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3\n question: If you are older than 61, please specify\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: 10\n type: textfield\n validation: validate_sub_question\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3\n parent_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n sort_order: 3\n subquestions: *id003\n code: g1q1a3s1\n form_object: *id001\n header: \n help: \"Select the <b>one</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1\n parent_id: ~~testsmerf~~1~~g1q1~~3\n question: Are you aged over 40\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: \n type: singlechoice\n validation: validate_sub_question\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q1~~3\n parent_id: ~~testsmerf~~1~~g1q1\n sort_order: 3\n subquestions: *id004\n code: g1q1\n form_object: *id001\n header: \n help: \"Select the <b>one</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q1\n parent_id: ~~testsmerf~~1\n question: \"Specify your ages \"\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: \n type: singlechoice\n validation: validate_mandatory_question\n - &id033 !ruby/object:SmerfQuestion \n answers: &id006 \n false: \n code: 1\n default: Y\n sort_order: 1\n answer: \"No\"\n true: \n code: 2\n default: N\n sort_order: 2\n answer: \"Yes\"\n child_items: \n - &id020 !ruby/object:SmerfAnswer \n answer: \"No\"\n child_items: []\n\n code: \"1\"\n default: Y\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q2~~1\n parent_id: ~~testsmerf~~1~~g1q2\n sort_order: 1\n subquestions: \n - &id027 !ruby/object:SmerfAnswer \n answer: \"Yes\"\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q2~~2\n parent_id: ~~testsmerf~~1~~g1q2\n sort_order: 2\n subquestions: \n code: g1q2\n form_object: *id001\n header: \n help: \n item_id: ~~testsmerf~~1~~g1q2\n parent_id: ~~testsmerf~~1\n question: \"Are you married \"\n selectionbox_multiplechoice: \n sort_order: 2\n textbox_size: \n textfield_size: \n type: singlechoice\n validation: \n - &id036 !ruby/object:SmerfQuestion \n answers: &id009 \n sleeping: \n code: 3\n default: N\n sort_order: 3\n answer: Sleeping\n chess: \n code: 1\n default: N\n sort_order: 1\n answer: Chess\n other: \n code: 4\n default: N\n sort_order: 4\n subquestions: &id005 \n other_industries: \n help: \"Please specify \"\n textbox_size: 30x3\n code: g1q3a4s1\n validation: validate_sub_question\n sort_order: 1\n type: textbox\n question: \n answer: \"Other \"\n woodwork: \n code: 2\n default: N\n sort_order: 2\n answer: Wood work\n child_items: \n - &id024 !ruby/object:SmerfAnswer \n answer: Chess\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~1\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 1\n subquestions: \n - &id030 !ruby/object:SmerfAnswer \n answer: Wood work\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~2\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 2\n subquestions: \n - &id037 !ruby/object:SmerfAnswer \n answer: Sleeping\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~3\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 3\n subquestions: \n - &id040 !ruby/object:SmerfAnswer \n answer: \"Other \"\n child_items: \n - &id023 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g1q3a4s1\n form_object: *id001\n header: \n help: \"Please specify \"\n item_id: ~~testsmerf~~1~~g1q3~~4~~g1q3a4s1\n parent_id: ~~testsmerf~~1~~g1q3~~4\n question: \n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: 30x3\n textfield_size: \n type: textbox\n validation: validate_sub_question\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q3~~4\n parent_id: ~~testsmerf~~1~~g1q3\n sort_order: 4\n subquestions: *id005\n code: g1q3\n form_object: *id001\n header: Another header that you can group questions under\n help: \"Mark <b>all</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q3\n parent_id: ~~testsmerf~~1\n question: \"What are your hobbies \"\n selectionbox_multiplechoice: \n sort_order: 3\n textbox_size: \n textfield_size: \n type: multiplechoice\n validation: \n - &id044 !ruby/object:SmerfQuestion \n answers: &id007 \n fr: \n code: 3\n default: N\n sort_order: 3\n answer: France\n sa: \n code: 4\n default: N\n sort_order: 4\n answer: \"South Africa \"\n us: \n code: 2\n default: Y\n sort_order: 2\n answer: \"United States \"\n au: \n code: 1\n default: N\n sort_order: 1\n answer: Australia\n child_items: \n - &id016 !ruby/object:SmerfAnswer \n answer: Australia\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~1\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 1\n subquestions: \n - &id019 !ruby/object:SmerfAnswer \n answer: \"United States \"\n child_items: []\n\n code: \"2\"\n default: Y\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~2\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 2\n subquestions: \n - &id026 !ruby/object:SmerfAnswer \n answer: France\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~3\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 3\n subquestions: \n - &id032 !ruby/object:SmerfAnswer \n answer: \"South Africa \"\n child_items: []\n\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q5~~4\n parent_id: ~~testsmerf~~1~~g1q5\n sort_order: 4\n subquestions: \n code: g1q5\n form_object: *id001\n header: \n help: \"Choose <b>all</b> that apply \"\n item_id: ~~testsmerf~~1~~g1q5\n parent_id: ~~testsmerf~~1\n question: \"Which countries have you visited \"\n selectionbox_multiplechoice: Y\n sort_order: 4\n textbox_size: \n textfield_size: \n type: selectionbox\n validation: \n - &id041 !ruby/object:SmerfQuestion \n answers: &id008 \n blue: \n code: 2\n default: Y\n sort_order: 2\n answer: \"Blue \"\n green: \n code: 3\n default: N\n sort_order: 3\n answer: \"Green \"\n red: \n code: 1\n default: N\n sort_order: 1\n answer: Red\n yellow: \n code: 4\n default: N\n sort_order: 4\n answer: \"Yellow \"\n child_items: \n - &id018 !ruby/object:SmerfAnswer \n answer: Red\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~1\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 1\n subquestions: \n - &id025 !ruby/object:SmerfAnswer \n answer: \"Blue \"\n child_items: []\n\n code: \"2\"\n default: Y\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~2\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 2\n subquestions: \n - &id031 !ruby/object:SmerfAnswer \n answer: \"Green \"\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~3\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 3\n subquestions: \n - &id038 !ruby/object:SmerfAnswer \n answer: \"Yellow \"\n child_items: []\n\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~1~~g1q4~~4\n parent_id: ~~testsmerf~~1~~g1q4\n sort_order: 4\n subquestions: \n code: g1q4\n form_object: *id001\n header: \n help: \"Choose <b>one</b> of the following \"\n item_id: ~~testsmerf~~1~~g1q4\n parent_id: ~~testsmerf~~1\n question: \"What is your favourite colour \"\n selectionbox_multiplechoice: \n sort_order: 4\n textbox_size: \n textfield_size: \n type: selectionbox\n validation: validate_mandatory_question\n code: \"1\"\n description: |\n This is a brief description of the Personal Details Grouphere we ask you some personal details ...\n\n form_object: *id001\n item_id: ~~testsmerf~~1\n name: Personal Details Group\n parent_id: ~~testsmerf\n questions: &id013 \n are_you_married: \n help: \n code: g1q2\n sort_order: 2\n type: singlechoice\n question: \"Are you married \"\n answers: *id006\n os_travel: \n help: \"Choose <b>all</b> that apply \"\n code: g1q5\n sort_order: 4\n type: selectionbox\n question: \"Which countries have you visited \"\n answers: *id007\n selectionbox_multiplechoice: Y\n favourite_color: \n help: \"Choose <b>one</b> of the following \"\n code: g1q4\n validation: validate_mandatory_question\n sort_order: 4\n type: selectionbox\n question: \"What is your favourite colour \"\n answers: *id008\n hobbies: \n help: \"Mark <b>all</b> that apply \"\n code: g1q3\n header: Another header that you can group questions under\n sort_order: 3\n type: multiplechoice\n question: \"What are your hobbies \"\n answers: *id009\n specify_your_age: \n help: \"Select the <b>one</b> that apply \"\n code: g1q1\n validation: validate_mandatory_question\n sort_order: 1\n type: singlechoice\n question: \"Specify your ages \"\n answers: *id010\n - &id047 !ruby/object:SmerfGroup \n child_items: \n - &id034 !ruby/object:SmerfQuestion \n answers: &id012 \n it: \n code: 1\n default: N\n sort_order: 1\n answer: Information Technology\n accounting: \n code: 2\n default: N\n sort_order: 2\n answer: \"Accounting \"\n finance: \n code: 3\n default: N\n sort_order: 3\n answer: \"Finance \"\n other: \n code: 4\n default: N\n sort_order: 4\n subquestions: &id011 \n other_industries: \n help: \"Please specify \"\n textbox_size: 30x3\n code: g2q1a4s1\n validation: validate_sub_question\n sort_order: 1\n type: textbox\n question: \n answer: \"Other \"\n child_items: \n - &id021 !ruby/object:SmerfAnswer \n answer: Information Technology\n child_items: []\n\n code: \"1\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~1\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 1\n subquestions: \n - &id029 !ruby/object:SmerfAnswer \n answer: \"Accounting \"\n child_items: []\n\n code: \"2\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~2\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 2\n subquestions: \n - &id035 !ruby/object:SmerfAnswer \n answer: \"Finance \"\n child_items: []\n\n code: \"3\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~3\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 3\n subquestions: \n - &id039 !ruby/object:SmerfAnswer \n answer: \"Other \"\n child_items: \n - &id028 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g2q1a4s1\n form_object: *id001\n header: \n help: \"Please specify \"\n item_id: ~~testsmerf~~2~~g2q1~~4~~g2q1a4s1\n parent_id: ~~testsmerf~~2~~g2q1~~4\n question: \n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: 30x3\n textfield_size: \n type: textbox\n validation: validate_sub_question\n code: \"4\"\n default: N\n form_object: *id001\n item_id: ~~testsmerf~~2~~g2q1~~4\n parent_id: ~~testsmerf~~2~~g2q1\n sort_order: 4\n subquestions: *id011\n code: g2q1\n form_object: *id001\n header: \n help: \"Mark <b>all</b> that apply \"\n item_id: ~~testsmerf~~2~~g2q1\n parent_id: ~~testsmerf~~2\n question: \"Which industries have you worked in \"\n selectionbox_multiplechoice: \n sort_order: 1\n textbox_size: \n textfield_size: \n type: multiplechoice\n validation: validate_mandatory_question\n - &id042 !ruby/object:SmerfQuestion \n answers: \n child_items: []\n\n code: g2q3\n form_object: *id001\n header: \n help: \n item_id: ~~testsmerf~~2~~g2q3\n parent_id: ~~testsmerf~~2\n question: How many years have you worked in the industry\n selectionbox_multiplechoice: \n sort_order: 3\n textbox_size: \n textfield_size: 10\n type: textfield\n validation: validate_mandatory_question, validate_years\n code: \"2\"\n description: \"Brief description of the employment details group \"\n form_object: *id001\n item_id: ~~testsmerf~~2\n name: Employment Details Group\n parent_id: ~~testsmerf\n questions: &id014 \n how_many_years: \n help: \n code: g2q3\n validation: validate_mandatory_question, validate_years\n header: \n sort_order: 3\n type: textfield\n textfield_size: 10\n question: How many years have you worked in the industry\n which_industry: \n help: \"Mark <b>all</b> that apply \"\n code: g2q1\n validation: validate_mandatory_question\n sort_order: 1\n type: multiplechoice\n question: \"Which industries have you worked in \"\n answers: *id012\n code: testsmerf\n errors: {}\n\n form_object: *id001\n group_sort_order_field: code\n groups: \n personal_details: \n name: Personal Details Group\n questions: *id013\n code: 1\n description: |\n This is a brief description of the Personal Details Grouphere we ask you some personal details ...\n\n employment_details: \n name: Employment Details Group\n questions: *id014\n code: 2\n question_sort_order_field: sort_order\n description: \"Brief description of the employment details group \"\n item_id: ~~testsmerf\n item_index: \n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3: *id015\n ~~testsmerf~~1~~g1q5~~1: *id016\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1: *id017\n ~~testsmerf~~1~~g1q4~~1: *id018\n ~~testsmerf~~1~~g1q5~~2: *id019\n ~~testsmerf~~1~~g1q2~~1: *id020\n ~~testsmerf~~2~~g2q1~~1: *id021\n ~~testsmerf~~1~~g1q1: *id022\n ~~testsmerf~~1~~g1q3~~4~~g1q3a4s1: *id023\n ~~testsmerf~~1~~g1q3~~1: *id024\n ~~testsmerf~~1~~g1q4~~2: *id025\n ~~testsmerf~~1~~g1q5~~3: *id026\n ~~testsmerf~~1~~g1q2~~2: *id027\n ~~testsmerf: *id001\n ~~testsmerf~~2~~g2q1~~4~~g2q1a4s1: *id028\n ~~testsmerf~~2~~g2q1~~2: *id029\n ~~testsmerf~~1~~g1q3~~2: *id030\n ~~testsmerf~~1~~g1q4~~3: *id031\n ~~testsmerf~~1~~g1q5~~4: *id032\n ~~testsmerf~~1~~g1q2: *id033\n ~~testsmerf~~2~~g2q1: *id034\n ~~testsmerf~~2~~g2q1~~3: *id035\n ~~testsmerf~~1~~g1q3: *id036\n ~~testsmerf~~1~~g1q3~~3: *id037\n ~~testsmerf~~1~~g1q4~~4: *id038\n ~~testsmerf~~2~~g2q1~~4: *id039\n ~~testsmerf~~1~~g1q3~~4: *id040\n ~~testsmerf~~1~~g1q4: *id041\n ~~testsmerf~~2~~g2q3: *id042\n ~~testsmerf~~1~~g1q1~~1: *id043\n ~~testsmerf~~1~~g1q5: *id044\n ~~testsmerf~~1: *id045\n ~~testsmerf~~1~~g1q1~~2: *id046\n ~~testsmerf~~2: *id047\n ~~testsmerf~~1~~g1q1~~3: *id048\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~1: *id049\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~2: *id050\n ~~testsmerf~~1~~g1q1~~3~~g1q1a3s1~~3~~g1q1a3s1a3s1: *id051\n name: Test SMERF Form\n parent_id: \"\"\n thank_you: |\n <b>Thank you for your input.</b><br><br>\n \n Should you wish to discuss this survey please contact<br>\n Joe Bloggs<br>\n Tel. 12 345 678<br>\n e-mail <A HREF=\\\"mailto:jbloggs@xyz.com.au\\\">Joe\'s email</A><br><br>\n \n February 2007\n\n welcome: |\n <b>Welcome:</b><br>\n Thank you for taking part in our Test survey we appreciate your\n input.<br><br>\n \n <b>PRIVACY STATEMENT</b><br>\n We will keep all the information you provide private and not share\n it with anyone else....<br>\n\n', '2011-07-21 02:57:28', 1)[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSmerfFormsUser Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 1) LIMIT 1[0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (31.3ms)
+Completed in 1783ms (View: 63, DB: 47) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#create (for 127.0.0.1 at 2011-07-21 11:00:44) [POST]
+  Parameters: {"responses"=>{"g1q1a3s1a3s1"=>"", "g1q1"=>"1", "g2q1"=>{"2"=>"2"}, "g1q2"=>"1", "g1q3"=>{"1"=>"1"}, "g2q3"=>"3", "g1q4"=>["2"], "g1q5"=>["3"], "g1q3a4s1"=>"", "g2q1a4s1"=>""}, "commit"=>"Press to Save your answers", "smerf_form_id"=>"1", "authenticity_token"=>"cR5r9ikPq1lzCGAEL/dhUb/r3rORJkmI9dCcwqbOhIw="}
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (`smerf_forms`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSmerfFormsUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `smerf_forms_users`[0m
+  [4;35;1mSmerfFormsUser Create (0.0ms)[0m   [0mINSERT INTO `smerf_forms_users` (`responses`, `smerf_form_id`, `user_id`) VALUES('--- !map:HashWithIndifferentAccess \ng1q1a3s1a3s1: \"\"\ng1q1: \"1\"\ng1q2: \"1\"\ng2q1: !map:HashWithIndifferentAccess \n \"2\": \"2\"\ng1q3: !map:HashWithIndifferentAccess \n \"1\": \"1\"\ng1q4: \n- \"2\"\ng2q3: \"3\"\ng1q5: \n- \"3\"\ng1q3a4s1: \"\"\ng2q1a4s1: \"\"\n', 1, 1)[0m
+  [4;36;1mSmerfResponse Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `smerf_responses`[0m
+  [4;35;1mSmerfResponse Create (15.6ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('1', 'g1q1', 1)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('1', 'g1q2', 1)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('2', 'g2q1', 1)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('1', 'g1q3', 1)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('2', 'g1q4', 1)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('3', 'g2q3', 1)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('3', 'g1q5', 1)[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mCOMMIT[0m
+Rendering smerf_forms/edit
+Rendered smerf_forms/_smerf_form (187.7ms)
+Completed in 454ms (View: 266, DB: 47) | 200 OK [http://localhost/smerf_forms]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 11:00:56) [GET]
+Rendering home/index
+Completed in 16ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 11:06:01) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 11:06:08) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 11:06:12) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 31ms (View: 31, DB: 0) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-07-21 11:06:20) [GET]
+  [4;35;1mUser Columns (0.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 47ms (View: 16, DB: 0) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-07-21 11:06:33) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"cR5r9ikPq1lzCGAEL/dhUb/r3rORJkmI9dCcwqbOhIw=", "user"=>{"username"=>"6303i", "password"=>"nokia"}}
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `updated_at`, `username`, `password`) VALUES('2011-07-21 03:06:33', '2011-07-21 03:06:33', '6303i', 'nokia')[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/2
+Completed in 78ms (DB: 63) | 302 Found [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 11:06:33) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 31ms (View: 0, DB: 31) | 200 OK [http://localhost/users/2]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 11:06:37) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;36;1mSmerfForm Load (15.6ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfFormsUser Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 2) LIMIT 1[0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (78.2ms)
+Completed in 109ms (View: 94, DB: 16) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 11:06:38) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfFormsUser Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 2) LIMIT 1[0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (46.9ms)
+Completed in 78ms (View: 63, DB: 0) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 11:06:39) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfFormsUser Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 2) LIMIT 1[0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (46.9ms)
+Completed in 188ms (View: 47, DB: 0) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 11:06:40) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfFormsUser Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 2) LIMIT 1[0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (46.9ms)
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#create (for 127.0.0.1 at 2011-07-21 11:07:50) [POST]
+  Parameters: {"responses"=>{"g1q1a3s1a3s1"=>"", "g1q1"=>"3", "g2q1"=>{"1"=>"1", "2"=>"2", "3"=>"3", "4"=>"4"}, "g1q2"=>"2", "g1q1a3s1"=>"2", "g1q3"=>{"1"=>"1", "2"=>"2", "3"=>"3", "4"=>"4"}, "g2q3"=>"15", "g1q4"=>["4"], "g1q5"=>["1", "2", "3", "4"], "g1q3a4s1"=>"surfing(internet, channel)", "g2q1a4s1"=>"Street Sweeper"}, "commit"=>"Press to Save your answers", "smerf_form_id"=>"1", "authenticity_token"=>"cR5r9ikPq1lzCGAEL/dhUb/r3rORJkmI9dCcwqbOhIw="}
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (`smerf_forms`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSmerfFormsUser Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_forms_users` (`responses`, `smerf_form_id`, `user_id`) VALUES('--- !map:HashWithIndifferentAccess \ng1q1a3s1a3s1: \"\"\ng1q1: \"3\"\ng1q1a3s1: \"2\"\ng1q2: \"2\"\ng2q1: !map:HashWithIndifferentAccess \n \"1\": \"1\"\n \"2\": \"2\"\n \"3\": \"3\"\n \"4\": \"4\"\ng1q3: !map:HashWithIndifferentAccess \n \"1\": \"1\"\n \"2\": \"2\"\n \"3\": \"3\"\n \"4\": \"4\"\ng1q4: \n- \"4\"\ng2q3: \"15\"\ng1q5: \n- \"1\"\n- \"2\"\n- \"3\"\n- \"4\"\ng1q3a4s1: surfing(internet, channel)\ng2q1a4s1: Street Sweeper\n', 1, 2)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('3', 'g1q1', 2)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('2', 'g1q1a3s1', 2)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('2', 'g1q2', 2)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('1', 'g2q1', 2)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('2', 'g2q1', 2)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('3', 'g2q1', 2)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('4', 'g2q1', 2)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('1', 'g1q3', 2)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('2', 'g1q3', 2)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('3', 'g1q3', 2)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('4', 'g1q3', 2)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('4', 'g1q4', 2)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('15', 'g2q3', 2)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('1', 'g1q5', 2)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('2', 'g1q5', 2)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('3', 'g1q5', 2)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('4', 'g1q5', 2)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('surfing(internet, channel)', 'g1q3a4s1', 2)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('Street Sweeper', 'g2q1a4s1', 2)[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mCOMMIT[0m
+Rendering smerf_forms/edit
+Rendered smerf_forms/_smerf_form (31.3ms)
+Completed in 156ms (View: 31, DB: 31) | 200 OK [http://localhost/smerf_forms]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 11:10:57) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 11:10:58) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 11:11:00) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 11:11:02) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 78ms (View: 47, DB: 0) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 11:11:06) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (15.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 2) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 63ms (View: 0, DB: 31) | 200 OK [http://localhost/users/2]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 11:11:08) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSmerfFormsUser Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 2) LIMIT 1[0m
+Rendering smerf_forms/edit
+Rendered smerf_forms/_smerf_form (31.3ms)
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 11:11:09) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;35;1mSmerfForm Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;36;1mSmerfFormsUser Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 2) LIMIT 1[0m
+Rendering smerf_forms/edit
+Rendered smerf_forms/_smerf_form (31.3ms)
+Completed in 47ms (View: 31, DB: 0) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 11:15:36) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 16ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#index (for 127.0.0.1 at 2011-07-21 11:15:37) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 0ms (View: 0, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 11:15:39) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (31.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 63ms (View: 16, DB: 31) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2011-07-21 11:15:40) [GET]
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM `users` [0m
+Rendering template within layouts/users
+Rendering users/index
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/users]
+  [4;35;1mSQL (0.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#new (for 127.0.0.1 at 2011-07-21 11:15:42) [GET]
+  [4;35;1mUser Columns (15.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/users
+Rendering users/new
+Completed in 47ms (View: 16, DB: 16) | 200 OK [http://localhost/users/new]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#create (for 127.0.0.1 at 2011-07-21 11:15:51) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"cR5r9ikPq1lzCGAEL/dhUb/r3rORJkmI9dCcwqbOhIw=", "user"=>{"username"=>"bariho", "password"=>"watch"}}
+  [4;36;1mUser Columns (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mUser Create (0.0ms)[0m   [0;1mINSERT INTO `users` (`created_at`, `updated_at`, `username`, `password`) VALUES('2011-07-21 03:15:51', '2011-07-21 03:15:51', 'bariho', 'watch')[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/users/3
+Completed in 63ms (DB: 31) | 302 Found [http://localhost/users]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2011-07-21 11:15:52) [GET]
+  Parameters: {"id"=>"3"}
+  [4;36;1mUser Columns (0.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (15.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 3) [0m
+Rendering template within layouts/users
+Rendering users/show
+Completed in 31ms (View: 0, DB: 16) | 200 OK [http://localhost/users/3]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 11:15:59) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfFormsUser Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 3) LIMIT 1[0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (62.5ms)
+Completed in 94ms (View: 78, DB: 0) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 11:16:00) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfFormsUser Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 3) LIMIT 1[0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (156.3ms)
+Completed in 203ms (View: 188, DB: 0) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 11:16:55) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfFormsUser Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 3) LIMIT 1[0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (46.9ms)
+Completed in 63ms (View: 47, DB: 0) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#show (for 127.0.0.1 at 2011-07-21 11:17:07) [GET]
+  Parameters: {"id"=>"testsmerf"}
+  [4;36;1mSmerfForm Load (0.0ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (code = 'testsmerf') LIMIT 1[0m
+  [4;35;1mSmerfFormsUser Load (0.0ms)[0m   [0mSELECT * FROM `smerf_forms_users` WHERE (smerf_form_id = 1 AND user_id = 3) LIMIT 1[0m
+Rendering smerf_forms/create
+Rendered smerf_forms/_smerf_form (31.3ms)
+Completed in 47ms (View: 47, DB: 0) | 200 OK [http://localhost/smerf_forms/testsmerf]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SmerfFormsController#create (for 127.0.0.1 at 2011-07-21 11:19:52) [POST]
+  Parameters: {"responses"=>{"g1q1a3s1a3s1"=>"60", "g1q1"=>"3", "g2q1"=>{"1"=>"1"}, "g1q2"=>"2", "g1q1a3s1"=>"3", "g1q3"=>{"2"=>"2", "3"=>"3"}, "g2q3"=>"0", "g1q4"=>["1"], "g1q5"=>["2", "3"], "g1q3a4s1"=>"", "g2q1a4s1"=>""}, "commit"=>"Press to Save your answers", "smerf_form_id"=>"1", "authenticity_token"=>"cR5r9ikPq1lzCGAEL/dhUb/r3rORJkmI9dCcwqbOhIw="}
+  [4;36;1mSmerfForm Load (15.6ms)[0m   [0;1mSELECT * FROM `smerf_forms` WHERE (`smerf_forms`.`id` = 1) [0m
+  [4;35;1mSQL (0.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSmerfFormsUser Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_forms_users` (`responses`, `smerf_form_id`, `user_id`) VALUES('--- !map:HashWithIndifferentAccess \ng1q1a3s1a3s1: \"60\"\ng1q1: \"3\"\ng1q1a3s1: \"3\"\ng1q2: \"2\"\ng2q1: !map:HashWithIndifferentAccess \n \"1\": \"1\"\ng1q3: !map:HashWithIndifferentAccess \n \"2\": \"2\"\n \"3\": \"3\"\ng1q4: \n- \"1\"\ng2q3: \"0\"\ng1q5: \n- \"2\"\n- \"3\"\ng1q3a4s1: \"\"\ng2q1a4s1: \"\"\n', 1, 3)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('60', 'g1q1a3s1a3s1', 3)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('3', 'g1q1', 3)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('3', 'g1q1a3s1', 3)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('2', 'g1q2', 3)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('1', 'g2q1', 3)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('2', 'g1q3', 3)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('3', 'g1q3', 3)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('1', 'g1q4', 3)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('0', 'g2q3', 3)[0m
+  [4;36;1mSmerfResponse Create (0.0ms)[0m   [0;1mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('2', 'g1q5', 3)[0m
+  [4;35;1mSmerfResponse Create (0.0ms)[0m   [0mINSERT INTO `smerf_responses` (`response`, `question_code`, `smerf_forms_user_id`) VALUES('3', 'g1q5', 3)[0m
+  [4;36;1mSQL (31.3ms)[0m   [0;1mCOMMIT[0m
+Rendering smerf_forms/edit
+Rendered smerf_forms/_smerf_form (31.3ms)
+Completed in 688ms (View: 563, DB: 47) | 200 OK [http://localhost/smerf_forms]
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20110721023446)
+Migrating to CreateSmerfs (20110721023552)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (31.3ms)[0m   [0mSHOW FIELDS FROM `smerf_forms`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `smerf_forms`[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mSHOW KEYS FROM `smerf_forms`[0m
+  [4;36;1mSQL (31.2ms)[0m   [0;1mSHOW FIELDS FROM `smerf_forms_users`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `smerf_forms_users`[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSHOW KEYS FROM `smerf_forms_users`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW FIELDS FROM `smerf_responses`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mdescribe `smerf_responses`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mSHOW KEYS FROM `smerf_responses`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (15.6ms)[0m   [0mdescribe `users`[0m
+  [4;36;1mSQL (15.6ms)[0m   [0;1mSHOW KEYS FROM `users`[0m
